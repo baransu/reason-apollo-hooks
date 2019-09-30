@@ -18,6 +18,8 @@ module Make = (Config: Config) => {
     [@bs.optional]
     variables: Js.Json.t,
     [@bs.optional]
+    pollInterval: int,
+    [@bs.optional]
     client: ApolloClient.generatedApolloClient,
   };
 
