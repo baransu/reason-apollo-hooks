@@ -37,7 +37,11 @@ type result('a) = {
     Js.Promise.t(unit),
   networkStatus: Types.networkStatus,
   subscribeToMore:
-    (~document: ReasonApolloTypes.queryString, ~variables: Js.Json.t) =>
+    (
+      ~document: ReasonApolloTypes.queryString,
+      ~variables: Js.Json.t,
+      ~updateQuery: updateQueryT
+    ) =>
     (. unit) => unit,
 };
 
@@ -90,6 +94,7 @@ module Make = (Config: Config) => {
           .
           "document": ReasonApolloTypes.queryString,
           "variables": Js.Json.t,
+          "updateQuery": updateQueryT,
         } =>
         (. unit) => unit,
     } =
@@ -152,10 +157,11 @@ module Make = (Config: Config) => {
               jsResult##fetchMore(
                 fetchMoreOptions(~variables?, ~updateQuery, ()),
               ),
-            subscribeToMore: (~document, ~variables) =>
+            subscribeToMore: (~document, ~variables, ~updateQuery) =>
               jsResult##subscribeToMore({
                 "document": document,
                 "variables": variables,
+                "updateQuery": updateQuery,
               }),
           },
         [|jsResult|],
