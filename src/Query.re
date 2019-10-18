@@ -36,6 +36,9 @@ type result('a) = {
     (~variables: Js.Json.t=?, ~updateQuery: updateQueryT, unit) =>
     Js.Promise.t(unit),
   networkStatus: Types.networkStatus,
+  subscribeToMore:
+    (~document: ReasonApolloTypes.queryString, ~variables: Js.Json.t) =>
+    (. unit) => unit,
 };
 
 /**
@@ -81,6 +84,14 @@ module Make = (Config: Config) => {
       "refetch": Js.Nullable.t(Js.Json.t) => Js.Promise.t(Js.Json.t),
       [@bs.meth] "fetchMore": fetchMoreOptions => Js.Promise.t(unit),
       "networkStatus": Js.Nullable.t(int),
+      [@bs.meth]
+      "subscribeToMore":
+        {
+          .
+          "document": ReasonApolloTypes.queryString,
+          "variables": Js.Json.t,
+        } =>
+        (. unit) => unit,
     } =
     "useQuery";
 
@@ -141,6 +152,11 @@ module Make = (Config: Config) => {
               jsResult##fetchMore(
                 fetchMoreOptions(~variables?, ~updateQuery, ()),
               ),
+            subscribeToMore: (~document, ~variables) =>
+              jsResult##subscribeToMore({
+                "document": document,
+                "variables": variables,
+              }),
           },
         [|jsResult|],
       );
