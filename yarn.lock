@@ -1803,10 +1803,9 @@ readable-stream@~2.3.6:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-reason-apollo@^0.17.0:
+"reason-apollo@https://github.com/baransu/reason-apollo.git#6c46f29":
   version "0.17.0"
-  resolved "https://registry.yarnpkg.com/reason-apollo/-/reason-apollo-0.17.0.tgz#44e5930028a26378dcc44fd3545dd36c84ab665b"
-  integrity sha512-3o0eit+uxkbRkkdzYnK+tV5oSWwmNWczT9qdSJKNCpu0R/NYE5qfpSBX7ouJUnE1j4arxgXDs2Ryey47QNYwrw==
+  resolved "https://github.com/baransu/reason-apollo.git#6c46f2941239775fa67212995e1f0d700a136fc8"
   dependencies:
     apollo-cache-inmemory "^1.6.0"
     apollo-client "^2.6.3"

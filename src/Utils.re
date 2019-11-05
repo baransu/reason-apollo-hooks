@@ -1,6 +1,7 @@
-let toQueryObj = (result): ApolloClient.queryObj => {
+let toQueryObj = (~fetchPolicy=?, result): ApolloClient.queryObj => {
   "query": ApolloClient.gql(. result##query),
   "variables": result##variables,
+  "fetchPolicy": fetchPolicy->Js.Nullable.fromOption,
 };
 
 let toReadQueryOptions = result => {
