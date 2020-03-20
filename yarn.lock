@@ -1808,9 +1808,9 @@ readable-stream@~2.3.6:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-"reason-apollo@https://github.com/baransu/reason-apollo.git#6e7bddb":
+"reason-apollo@https://github.com/baransu/reason-apollo.git#d266579":
   version "0.19.0"
-  resolved "https://github.com/baransu/reason-apollo.git#6e7bddb755c6ea2352f7ac9ccef9639b0031bc47"
+  resolved "https://github.com/baransu/reason-apollo.git#d2665791d1b3d13647fb6b5ff18d1ef92efe8ad2"
   dependencies:
     apollo-cache-inmemory "^1.6.0"
     apollo-client "^2.6.3"
