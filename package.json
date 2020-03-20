@@ -1,11 +1,12 @@
 {
   "name": "reason-apollo-hooks",
-  "version": "3.0.0",
+  "version": "6.0.0",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:docs": "yarn build && bsdoc build --debug --verbose ReasonApolloHooks"
   },
   "keywords": [
     "BuckleScript"
@@ -16,17 +17,18 @@
     "@apollo/react-hooks": "^3.0.0",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "bs-platform": "^5.0.6",
+    "bs-platform": "^7.0.1",
+    "bsdoc": "6.0.1-alpha",
     "husky": "^3.0.5",
     "lint-staged": "^9.4.0",
-    "reason-apollo": "https://github.com/baransu/reason-apollo.git#6c46f29",
+    "reason-apollo": "https://github.com/baransu/reason-apollo.git#6e7bddb",
     "reason-react": ">=0.7.0"
   },
   "peerDependencies": {
     "@apollo/react-hooks": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "reason-apollo": "https://github.com/baransu/reason-apollo.git#6c46f29",
+    "reason-apollo": "https://github.com/baransu/reason-apollo.git#6e7bddb",
     "reason-react": ">=0.7.0"
   },
   "lint-staged": {
